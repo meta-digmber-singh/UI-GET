@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MetaParking</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>MetaParking</h1>
+            <div class="navigation-item">
+                <a href="#add-employee-section">Add Employee</a>
+                <a href="#add-vehicle-section">Add Vehicle</a>
+                <a href="#feedback-section">Give Feedback</a>
+                <a href="#pricing-section">Pricing</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="cover-image"><img src="https://t4.ftcdn.net/jpg/07/09/79/35/360_F_709793582_PXl6EQX2PXGoh8JIshDokNXMvhfMw7Fe.jpg"/></div>
+
+    <!-- Add employee -->
+    <section id="add-employee-section">
+        <details>
+            <summary> Add Employee</summary>
+            <div class="Add-Employee">
+                <div class="section-picture">
+                    <img src="./images/download.png" alt="image of person"/>
+                </div>
+                <form action="">
+                    <div class="input-container">
+                        <label for="Full Name" class="input-label">Full Name</label>
+                        <input class="input-field" type="text" name="Name" placeholder="Full Name">
+                    </div>
+                    <div class="input-container">
+                        <label for="Gender" class="input-label">Gender</label>
+                        <div class="radio-input-field">
+                            <input type="radio" id = "Male" name="Gender" value="Male">
+                            <label for="Male">Male</label>
+                            <input type="radio" id = "Female" name="Gender" value="Female">
+                            <label for="Female">Female</label>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <label for="Email" class="input-label">Email</label>
+                        <input class="input-field" type="email" name="Email" placeholder="Email">
+                    </div>
+                    <div class="input-container">
+                        <label for="Password" class="input-label">Password</label>
+                        
+                        <input class="input-field" type="password" name="Password" placeholder="Password">
+                        
+                    </div>
+                    <div class="input-container">
+                        <label for="Confirm Password" class="input-label">Confirm Password</label>
+                        
+                        <input class="input-field" type="password" name="Password" placeholder="Confirm Password">
+                        
+                    </div>
+                    <div class="input-container">
+                        <label for="Contact" class="input-label">Contact Number</label>
+                        
+                        <input class="input-field" type="text" name="Contact" placeholder="Contact">
+                        
+                    </div>
+                    <div class="submit-button">
+                        <button type="submit" name="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </details>
+    </section>
+
+    <section id="add-vehicle-section">
+        <details>
+            <summary> Add Vehicle</summary>
+            <div class="Add-Vehicle">
+                <div class="section-picture">
+                    <img src="./images/car.png" alt="image of red car"/>
+                </div>
+                <form action="">
+                    <div class="input-container">
+                        <label for="Vehicle-Make" class="input-label">Vehicle Make</label>        
+                        
+                        <input class="input-field" type="text" name="Vehicle-Make" placeholder="Vehicle Make">
+                        
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="Vehicle Model" class="input-label">Model</label>
+                        
+                        <input class="input-field" type="text" name="Model" placeholder="Vehicle Model">
+                        
+                    </div>
+                    <div class="input-container">
+                        <label for="Type" name="Type" class="input-label">Type</label>
+                        <select name="Type" id="Type">
+                            <option value="none">Select-option</option>
+                            <option value="Cycle">Cycle</option>
+                            <option value="MotorCycle">MotorCycle</option>
+                            <option value="Four-Wheeler">Four-Wheeler</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label for="Vehicle Number" class="input-label">Vehicle Number</label>
+                        
+                        <input class="input-field" type="text" name="Vehicle Number" placeholder="Vehicle Number">
+                        
+                    </div>
+                    <div class="input-container">
+                        <label for="Employee Id" class="input-label">Employee Id</label>
+                        
+                        <input class="input-field" type="text" name="Employee Id" placeholder="Employee Id">
+                        
+                    </div>
+                    <div class="input-container">
+                        <label for="Identification" class="input-label">Identification</label>
+                        
+                        <input type="text" class="input-field" name="Identification" placeholder="Identification">
+                        
+                    </div>
+                    <div class="submit-button">
+                        <button type="submit" name="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </details>
+    </section>
+
+
+    <!--Feedback Section-->
+    <section id="feedback-section">
+        <details>
+            <summary> Feedback</summary>
+            <div class="Feedback">
+                <div class="section-picture">
+                    <img src="./images/feedback.png" alt="image for feedback"/>
+                </div>
+                <form class="feedback-form" action="">
+                    <div class="input-container">
+                        <label for="Full-Name" class="input-label">Full Name</label>
+                        
+                        <input type="text" class="input-field"name="Name" placeholder="Your Name">
+                        
+                    </div>
+                    <div class="input-container">
+                        <label for="Email" class="input-label">Email</label>
+                        
+                        <input type="email" class="input-field" name="Email" placeholder="Email">    
+                        
+                    </div>
+                    <div class="input-container">
+                        <label for="Subject" class="input-label">Subject</label>
+                        
+                        <input type="text" class="input-field" name="Subject" placeholder="Subject">    
+                        
+                    </div>
+                    <div class="input-container">
+                        <div>
+                            <label for="Message" class="input-label">Message</label>
+                        </div>
+                        <textarea id="Message" class="input-field" type="text" name="Message" placeholder="Message"></textarea> 
+                        
+                    </div>
+                    <div class="submit-button">
+                        <button type="submit" name="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </details>
+    </section>
+
+    <section id="pricing-section">
+        <details>
+            <summary>Pricing</summary>
+            <div class="pricing-blocks">
+                <div class="Vehicle-price">
+                    <h3>CYCLE</h3>
+                    <div class="price-circle">
+                        <span class="permonth-price">$100</span>
+                        <span>/month</span>
+                    </div>
+                    <ul>
+                        <li>$5 Daily</li>
+                        <li>$100 Monthly</li>
+                        <li>$500 Yearly</li>
+                    </ul>
+                    <div class="purchase-button">
+                        <button type="submit" name="Purchase-Now">Purchase Now</button>
+                    </div>
+                </div>
+                <div class="Vehicle-price">
+                    <h3>MOTORCYCLE</h3>
+                    <div class="price-circle">
+                        <span class="permonth-price">$200</span>
+                        <span>/month</span>
+                    </div>
+                    <ul>    
+                        <li>$10 Daily</li>
+                        <li>$200 Monthly</li>
+                        <li>$1000 Yearly</li>
+                    </ul>
+                    <div class="purchase-button">
+                        <button type="submit" name="Purchase-Now">Purchase Now</button>
+                    </div>
+                </div>
+                <div class="Vehicle-price">
+                    <h3>FOURWHEELER</h3>
+                    <div class="price-circle">
+                        <span class="permonth-price">$500</span>
+                        <span>/month</span>
+                    </div>
+                    <ul>
+                        <li>$200 Daily</li>
+                        <li>$500 Monthly</li>
+                        <li>$3500 Yearly</li>
+                    </ul>
+                    <div class="purchase-button">
+                        <button type="submit" name="Purchase-Now">Purchase Now</button>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </section>
+</body>
+</html>

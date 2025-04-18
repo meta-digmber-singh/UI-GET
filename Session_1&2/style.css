@@ -1,0 +1,208 @@
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    gap: 10px;
+    background-color: rgb(59, 103, 199);
+}
+
+.navigation-item{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.navigation-item a{
+    text-decoration: none;
+    margin-top: 10px;
+    height: 1.5rem;
+    background-color: rgb(59, 103, 199);
+    color: aliceblue;
+    border-radius: 3px;
+    font-size: 20px;
+    text-align: center;
+}
+.cover-image img{
+    width: 100%;
+    height: 400px;
+}
+
+.Add-Employee{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.Add-Vehicle{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.Feedback{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+summary{
+    height: 20px;
+    background-color: rgb(59, 103, 199);
+    color: aliceblue;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.feedback-form{
+    align-items: center;
+    justify-content: center;
+}
+#Message{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 400px;
+    height: 200px;
+}
+
+.section-picture{
+    width: 20%;
+}
+
+.section-picture img{
+    width: 100%;
+    border: 0px;
+}
+.pricing-blocks{
+    gap: 10px;
+    display: flex;
+    padding: 10px 100px;
+    align-items: center;
+
+}
+
+.Vehicle-price{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid rgb(85, 29, 215);
+    align-items: center;
+}
+
+.Vehicle-price ul{
+    list-style: none;
+    text-align: left;
+    padding: 10px;
+}
+
+.price-circle{
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.permonth-price{
+    font-weight: bolder;
+}
+
+
+.input-field {
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    border-radius: .5rem;
+
+    border-radius: 5px;
+    border: 1px solid black;
+    height: .7rem;
+}
+
+.input-field :focus{
+    border: 2px solid black;
+}
+
+.input-label{
+    display: block;
+    font-weight: bold;
+    color: gray;
+    margin-bottom: .5rem;
+}
+
+.radio-input-field{
+    flex: 1;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+#Type{
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+h1{
+    font-weight: bolder;
+    color: aliceblue;
+}
+
+h2{
+    background-color: rgb(59, 103, 199);
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    color: aliceblue;
+}
+
+.purchase-button{
+    
+    border: 1px solid blue;
+}
+
+.submit-button{
+    align-items: center;
+    width: 50px;
+    align-self: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.submit-button button{
+    border: 0px;
+    color: black;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.submit-button button:hover{
+    width: 60px;
+    background-color: aquamarine;
+}
