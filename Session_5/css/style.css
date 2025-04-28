@@ -1,0 +1,45 @@
+.menu-bar{
+
+    width: 16vw;
+    height: 100vh;
+    position: fixed;
+    overflow: auto;
+    
+}
+
+:root{
+
+    font-size: 15px;
+}
+.image-round{
+    border: 50%;
+
+}
+
+.carousel-card{
+    height: 150px;
+}
+
+.carousel-card-item{
+    border: 1px solid black;
+    height: 150px;
+}
+
+
+.custom-color{
+    background-color: #5b6be8;
+}
+
+
+.dropdown-heading{
+
+    font-weight:600;
+    height: 35px;
+}
+.d-container{
+    width: 300px;
+}
+.custom-menu{
+    width: 10rem;
+}
+
