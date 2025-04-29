@@ -1,16 +1,22 @@
-.menu-bar{
+:root{
 
-    width: 350px;
+    font-size: 15px;
+}
+
+.menu-bar{
+    width: 16vw;
     height: 100vh;
     position: fixed;
     overflow: auto;
     
 }
 
-:root{
-
-    font-size: 15px;
+@media screen and (max-width: 992px){
+    .menu-bar{
+        width: 45% !important;
+    }
 }
+
 .image-round{
     border: 50%;
 
