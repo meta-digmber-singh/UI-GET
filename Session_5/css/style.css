@@ -43,3 +43,9 @@
     width: 10rem;
 }
 
+.new-users{
+    padding: 20px;
+    height: 300px;
+    overflow: auto;
+}
+
