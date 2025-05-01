@@ -1,7 +1,7 @@
 let index = 0;
 let emp = 1;
 let vehicleType;
-let selectedValue;
+let selectedType;
 
 let conversionRates = {
     "rupee": 83, "dollar": 1, "yen": 150   
@@ -23,9 +23,6 @@ const vehicleElementDiv=vehicleElement.getElementsByTagName("div");
 employeeElementDiv[index].lastElementChild.focus();
 employeeElementDiv[index].lastElementChild.addEventListener("keypress", handleNameInput);
 
-document.getElementById("rupee").addEventListener("click", changePrices("rupee"));
-document.getElementById("dollar").addEventListener("click", changePrices("dollar"));
-document.getElementById("yen").addEventListener("click", changePrices("yen"));
 
 // element.addEventListener("keypress", handleEmployee);
     
@@ -215,7 +212,8 @@ function handleVehicleInput(event){
         index++;
 
         if(index == vehicleElementDiv.length){
-            document.getElementById(selectedValue).classList.remove("hide-element");
+            document.querySelector(".currency-changer").classList.remove("hide-element");
+            document.getElementById(selectedType).classList.remove("hide-element");
             return;
         }
 
@@ -235,7 +233,7 @@ function handleVehicleInput(event){
 function handleSelectInput(event){
     const types = document.getElementById("vehicle-type");
     const selectedOption = types.options[types.selectedIndex];
-    selectedValue = types.value;
+    selectedType = types.value;
     
     vehicleElementDiv[index].classList.remove("show-element");
     vehicleElementDiv[index].classList.add("hide-element");
@@ -249,16 +247,16 @@ function handleSelectInput(event){
 function changePrices(currency){
     
     let selectedRate = conversionRates[currency];
-
+    console.log("in function");
     let priceArray;
-    switch(vehicleType) {
-        case "Cycle":
+    switch(selectedType) {
+        case "cycle":
             priceArray = cyclePrices;
             break;
-        case "MotorCycle":
+        case "motorcycle":
             priceArray = motorcyclePrices;
             break;
-        case "Four-Wheeler":
+        case "fourwheeler":
             priceArray = fourwheelerPrices;
             break;
         default:
@@ -266,11 +264,25 @@ function changePrices(currency){
     }
 
     document.querySelectorAll(".price").forEach((priceElement, ind) => {
+        console.log(priceArray[ind]);
+        console.log(selectedRate);
         let convertedPrice = (priceArray[ind] * selectedRate).toFixed(2); 
         priceElement.textContent = `${currency === "rupee" ? "₹" : currency === "yen" ? "¥" : "$"}${convertedPrice}`;
     });
 
 }
 
+function selectPlan(event) {
+    
+    document.querySelectorAll(".select-plan button").forEach(btn => {
+        btn.textContent = "Select Plan";
+        btn.classList.remove("selected");
+    });
+
+
+    event.target.classList.add("selected");
+    event.target.textContent = "Selected";
+    document.getElementById('pass').classList.remove("hide-element");
+}
     
 

@@ -119,13 +119,13 @@
     <section id="pricing-section">
 
         <h2 class="section-heading">Pricing</h2>
+        <div class="currency-changer hide-element">
+            <button class="currency-button" id="rupee" onclick="changePrices('rupee')">Rupees (₹)</button>
+            <button class="currency-button" id="dollar" onclick="changePrices('dollar')">Dollar ($)</button>
+            <button class="currency-button" id="yen" onclick="changePrices('yen')">Yen (¥)</button>
+        </div>
         <div class="pricing-blocks">
 
-            <div class="Currency-changer">
-                <button class="currency-button" id="rupee" onclick="changePrices('rupee')">Rupees (₹)</button>
-                <button class="currency-button" id="dollar" onclick="changePrices('dollar')">Dollar ($)</button>
-                <button class="currency-button" id="yen" onclick="changePrices('yen')">Yen (¥)</button>
-            </div>
             <div id="cycle" class="Vehicle-price hide-element">
                 <div class="price-block">
                     <h3 >CYCLE</h3>
@@ -134,7 +134,7 @@
                         <span>/day</span>
                     </div>
                     <div class="select-plan">
-                        <button type="submit" name="select-plan" onclick="selectPlan()">Select Plan</button>
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
                     </div>
                 </div>
 
@@ -145,7 +145,7 @@
                         <span>/month</span>
                     </div>
                     <div class="select-plan">
-                        <button type="submit" name="select-plan" onclick="selectPlan()">Select Plan</button>
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
                     </div>
                 </div>
                 <div class="price-block">
@@ -155,7 +155,7 @@
                         <span>/year</span>
                     </div>
                     <div class="select-plan">
-                        <button type="submit" name="select-plan" onclick="selectPlan()">Select Plan</button>
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
                     </div>
                 </div>
             </div>
@@ -167,7 +167,7 @@
                         <span>/day</span>
                     </div>
                     <div class="select-plan">
-                        <button type="submit" name="select-plan" onclick="selectPlan()">Select Plan</button>
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
                     </div>
                 </div>
                 <div class="price-block">
@@ -177,7 +177,7 @@
                         <span>/month</span>
                     </div>
                     <div class="select-plan">
-                        <button type="submit" name="select-plan" onclick="selectPlan()">Select Plan</button>
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
                     </div>
                 </div>
                 <div class="price-block">
@@ -187,7 +187,7 @@
                         <span>/year</span>
                     </div>
                     <div class="select-plan">
-                        <button type="submit" name="select-plan" onclick="selectPlan()">Select Plan</button>
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
                     </div>
                 </div>
             </div>
@@ -199,7 +199,7 @@
                         <span>/day</span>
                     </div>
                     <div class="select-plan">
-                        <button type="submit" name="select-plan" onclick="selectPlan()">Select Plan</button>
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
                     </div>
                 </div>
                 <div class="price-block">
@@ -209,7 +209,7 @@
                         <span>/month</span>
                     </div>
                     <div class="select-plan">
-                        <button type="submit" name="select-plan" onclick="selectPlan()">Select Plan</button>
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
                     </div>
                 </div>
 
@@ -220,13 +220,14 @@
                         <span>/year</span>
                     </div>
                     <div class="select-plan">
-                        <button type="submit" name="select-plan" onclick="selectPlan()">Select Plan</button>
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
                     </div>
                 </div>
             </div>
         </div>
-
-
+        <div class="get-pass hide-element">
+            <button id="pass" type="button">Get Pass</button>
+        </div>
         </div>
     </section>
 
