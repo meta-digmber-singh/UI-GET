@@ -82,8 +82,7 @@
 
                 <div class="input-container hide-element">
                     <label for="Type" name="Type" class="input-label">Which vehicle do you have ?</label>
-                    <select id="vehicle-type" name="Type" id="Type">
-                        <option value="none">Select-option</option>
+                    <select id="vehicle-type" name="Type">
                         <option name="vehicle-types" value="cycle">Cycle</option>
                         <option name="vehicle-types" value="motorcycle">MotorCycle</option>
                         <option name="vehicle-types" value="fourwheeler">Four-Wheeler</option>
@@ -226,7 +225,7 @@
             </div>
         </div>
         <div class="get-pass hide-element">
-            <button id="pass" type="button">Get Pass</button>
+            <button id="pass" type="button" onclick="generatePass()">Get Pass</button>
         </div>
         </div>
     </section>

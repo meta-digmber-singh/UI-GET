@@ -2,6 +2,8 @@ let index = 0;
 let emp = 1;
 let vehicleType;
 let selectedType;
+let passNo = 1;
+let passString;
 
 let conversionRates = {
     "rupee": 83, "dollar": 1, "yen": 150   
@@ -36,8 +38,9 @@ function handleNameInput(event){
         }
         else{
             const name = document.getElementById("Name").value;
+            
             document.getElementById("input-name").innerHTML = name;
-
+            passString = name.substring(0, 3);
             employeeElementDiv[index].classList.remove("show-element");
             employeeElementDiv[index].classList.add("hide-element");
             index ++;
@@ -267,6 +270,8 @@ function changePrices(currency){
         console.log(priceArray[ind]);
         console.log(selectedRate);
         let convertedPrice = (priceArray[ind] * selectedRate).toFixed(2); 
+
+        console.log("3"+conversionRates);
         priceElement.textContent = `${currency === "rupee" ? "₹" : currency === "yen" ? "¥" : "$"}${convertedPrice}`;
     });
 
@@ -278,11 +283,12 @@ function selectPlan(event) {
         btn.textContent = "Select Plan";
         btn.classList.remove("selected");
     });
-
-
     event.target.classList.add("selected");
     event.target.textContent = "Selected";
     document.getElementById('pass').classList.remove("hide-element");
 }
     
+generatePass = () => {
+    alert(`Your pass no is : ${passString}${passNo} for your ${selectedType}`);
+}
 
