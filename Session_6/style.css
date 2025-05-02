@@ -9,11 +9,15 @@ body{
     overflow-x: hidden;
 }
 
+.heading{
+    height: 20px;
+    padding: 5px;
+}
 
 .navbar{
-    width: 100%;
+    height: 50px;
     display: flex;
-    justify-content:space-between;
+    justify-content:center;
     background-color: rgb(59, 103, 199);
 }
 
@@ -28,6 +32,7 @@ body{
 .cover-image img{
     width: 100%;
     height: 400px;
+    display: block;
 }
 
 .Add-Employee{

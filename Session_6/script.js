@@ -29,11 +29,16 @@ employeeElementDiv[index].lastElementChild.focus();
 
 const handleSelectInput = (event) => {
     const types = document.getElementById("vehicle-type");
-    const selectedOption = types.options[types.selectedIndex];
+    if(types.options[types.selectedIndex] == -1){
+        return;
+    }
     selectedType = types.value;
-
     vehicleElementDiv[index].classList.remove("show-element");
     vehicleElementDiv[index].classList.add("hide-element");
+
+    if(selectedType == "cycle"){
+        index++;
+    }
     index++;
     vehicleElementDiv[index].classList.add("show-element");
     vehicleElementDiv[index].classList.remove("hide-element");
