@@ -6,7 +6,7 @@ let passNo = 1;
 let passString;
 
 let conversionRates = {
-    "rupee": 83, "dollar": 1, "yen": 150   
+    "rupee": 1, "dollar": 0.012, "yen": 1.73   
 };
 
 let cyclePrices = [5, 100, 500];
@@ -127,15 +127,17 @@ function handlePasswordInput(event){
     if(pass.value.match(numbers)) {
         strength++;
     }
-    if(pass.value.length >= 8) {
+    if(pass.value.length >= 7) {
         strength++;
     }
 
     
     if(strength != 4){
+        document.getElementById("password").style.borderColor = "red";
+        indicator.style.color = "red";
+        indicator.textContent = "Should have Uppercase, Lowercase , number and length >= 8";
         return;
     }
-
     document.getElementById("password").style.borderColor = color;
     indicator.textContent = message;
     indicator.style.color = color;

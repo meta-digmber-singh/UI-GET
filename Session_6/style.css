@@ -108,6 +108,7 @@ body{
     border-radius: 10px;
     border: 1px solid rgb(24, 24, 25);
     align-items: center;
+    color: aliceblue;
 }
 
 
@@ -165,26 +166,6 @@ h1{
     border: 1px solid blue;
 }
 
-.submit-button{
-    align-items: center;
-    width: 50px;
-    align-self: center;
-    background-color: white;
-    border-radius: 10px;
-}
-
-.submit-button button{
-    border: 0px;
-    color: black;
-    font-size: 15px;
-    background-color: white;
-    border: 1px solid black;
-}
-
-.submit-button button:hover{
-    width: 60px;
-    background-color: aquamarine;
-}
 
 .show-element{
     display: block;
@@ -223,4 +204,8 @@ h1{
 .get-pass{
     display: flex;
     justify-content: center;
+}
+
+#password-strength-indicator{
+    padding: 5px;
 }
