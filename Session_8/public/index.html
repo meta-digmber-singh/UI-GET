@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>MetaParking</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="heading">MetaParking</h1>
+        </nav>
+    </header>
+
+    <div class="cover-image"><img src="https://t4.ftcdn.net/jpg/07/09/79/35/360_F_709793582_PXl6EQX2PXGoh8JIshDokNXMvhfMw7Fe.jpg" alt="Cover-image"></div>
+
+    <!-- Add employee -->
+    <section id="add-employee-section">
+        <h2 class="section-heading">Register</h2>
+        <div class="Add-Employee">           
+            <form id="employee-form" action="POST">
+                <div class="input-container show-element">
+                    <label for="Full-Name" class="input-label">Enter Your Full Name</label>
+                    <input id="Name" class="input-field" type="text" name="Name" placeholder="Full Name">
+                </div>
+                <div class="input-container hide-element">
+                    <p class="input-label">Hi <span id="input-name"></span>, can I know your gender?</p>
+                    <label for="Male">Male</label>
+                    <input type="radio" id = "Male" name="Gender" value="Male">
+                    <label for="Female">Female</label>
+                    <input type="radio" id = "Female" name="Gender" value="Female">
+                </div>
+                <div class="input-container hide-element">
+                    <label for="Email" class="input-label">Enter Your Email</label>
+                    <input id="email" class="input-field" type="email" name="Email" placeholder="Email">
+                </div>
+                <div id="password-container" class="input-container hide-element">
+                    <label for="Password" class="input-label">Enter Password</label>
+                    
+                    <p id="password-strength-indicator" style="margin-top: 5px;"></p>
+                    <input id="password" class="input-field" type="password" name="Password" placeholder="Password">
+                </div>
+                <div class="input-container hide-element">
+                    <label for="Confirm-Password" class="input-label">Please Confirm Your Password</label>
+                    <input id="confirm-password" class="input-field" type="password" name="Confirm Password" placeholder="Confirm Password">
+                </div>
+                <div class="input-container hide-element">
+                    <label for="Contact" class="input-label">What is your contact number?</label>
+                    
+                    <input id="contact" class="input-field" type="text" name="Contact" placeholder="Contact">
+                    
+                </div>
+                <div>
+                    <p class="hide-element" id="register-id"></p>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <section id="add-vehicle-section">
+        <h2 class="section-heading">Add Vehicle</h2>
+        <div class="Add-Vehicle">
+            <form id="vehicle-form" action="POST">
+                <div class="input-container hide-element">
+                    <label for="Vehicle-Make" class="input-label">Vehicle Make</label>        
+                    
+                    <input class="input-field" type="text" name="Vehicle-Make" placeholder="Vehicle Make">
+                    
+                </div>
+                
+                <div class="input-container hide-element">
+                    <label for="Vehicle-Model" class="input-label">Enter vehicle model</label>
+                    
+                    <input class="input-field" type="text" name="Model" placeholder="Vehicle Model">
+                </div>
+
+                <div class="input-container hide-element">
+                    <label for="Type" name="Type" class="input-label">Which vehicle do you have ?</label>
+                    <select id="vehicle-type" name="Type">
+                        <option name="vehicle-types" value="cycle">Cycle</option>
+                        <option name="vehicle-types" value="motorcycle">MotorCycle</option>
+                        <option name="vehicle-types" value="fourwheeler">Four-Wheeler</option>
+                    </select>
+                    <button type="button" onclick="handleSelectInput()">select</button>
+                </div>
+                <div class="input-container hide-element">
+                    <label for="Vehicle-Number" class="input-label">Enter your vehicle number</label>
+                    
+                    <input class="input-field" type="text" name="Vehicle Number" placeholder="Vehicle Number">
+                    
+                </div>
+                <div class="input-container hide-element">
+                    <label for="EmployeeId" class="input-label">What is your Employee id ?</label>
+                    
+                    <input class="input-field" type="text" name="EmployeeId" placeholder="Employee Id">
+                    
+                </div>
+                <div class="input-container hide-element">
+                    <label for="Identification" class="input-label">Please specify identification for vehicle</label>
+                    
+                    <textarea type="text" class="input-field" name="Identification" placeholder="Identification">
+                    </textarea>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <section id="pricing-section">
+
+        <h2 class="section-heading">Pricing</h2>
+        <div class="currency-changer hide-element">
+            <button class="currency-button" id="rupee" onclick="changePrices('rupee')">Rupees (₹)</button>
+            <button class="currency-button" id="dollar" onclick="changePrices('dollar')">Dollar ($)</button>
+            <button class="currency-button" id="yen" onclick="changePrices('yen')">Yen (¥)</button>
+        </div>
+        <div class="pricing-blocks">
+
+            <div id="cycle" class="Vehicle-price hide-element">
+                <div class="price-block">
+                    <h3 >CYCLE</h3>
+                    <div class="price-circle">
+                        <span class="price">₹5.00</span>
+                        <span>/day</span>
+                    </div>
+                    <div class="select-plan">
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
+                    </div>
+                </div>
+
+                <div class="price-block">
+                    <h3 >CYCLE</h3>
+                    <div class="price-circle">
+                        <span class="price">₹100.00</span>
+                        <span>/month</span>
+                    </div>
+                    <div class="select-plan">
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
+                    </div>
+                </div>
+                <div class="price-block">
+                    <h3 >CYCLE</h3>
+                    <div class="price-circle">
+                        <span class="price">₹500.00</span>
+                        <span>/year</span>
+                    </div>
+                    <div class="select-plan">
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
+                    </div>
+                </div>
+            </div>
+            <div id="motorcycle" class="Vehicle-price hide-element">
+                <div class="price-block">
+                    <h3>MOTORCYCLE</h3>
+                    <div class="price-circle">
+                        <span class="price">₹10.00</span>
+                        <span>/day</span>
+                    </div>
+                    <div class="select-plan">
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
+                    </div>
+                </div>
+                <div class="price-block">
+                    <h3>MOTORCYCLE</h3>
+                    <div class="price-circle">
+                        <span class="price">₹200.00</span>
+                        <span>/month</span>
+                    </div>
+                    <div class="select-plan">
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
+                    </div>
+                </div>
+                <div class="price-block">
+                    <h3>MOTORCYCLE</h3>
+                    <div class="price-circle">
+                        <span class="price">₹1000.00</span>
+                        <span>/year</span>
+                    </div>
+                    <div class="select-plan">
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
+                    </div>
+                </div>
+            </div>
+            <div id="fourwheeler" class="Vehicle-price hide-element">
+                <div class="price-block">
+                    <h3>FOURWHEELER</h3>
+                    <div class="price-circle">
+                        <span class="price">₹200.00</span>
+                        <span>/day</span>
+                    </div>
+                    <div class="select-plan">
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
+                    </div>
+                </div>
+                <div class="price-block">
+                    <h3>FOURWHEELER</h3>
+                    <div class="price-circle">
+                        <span class="price">₹500.00</span>
+                        <span>/month</span>
+                    </div>
+                    <div class="select-plan">
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
+                    </div>
+                </div>
+
+                <div class="price-block">
+                    <h3>FOURWHEELER</h3>
+                    <div class="price-circle">
+                        <span class="price">₹3500.00</span>
+                        <span>/year</span>
+                    </div>
+                    <div class="select-plan">
+                        <button type="submit" name="select-plan" onclick="selectPlan(event)">Select Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="get-pass hide-element">
+            <button id="pass" type="button" onclick="generatePass()">Get Pass</button>
+        </div>
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
