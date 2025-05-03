@@ -260,7 +260,7 @@ const selectPlan = (event) => {
 };
 
 generatePass = () => {
-    alert(`Your pass no is : ${passString}${passNo} for your ${selectedType}`);
+    alert(`Pass for your ${selectedType} is : ${passString}${passNo}`);
     
 }
                 
