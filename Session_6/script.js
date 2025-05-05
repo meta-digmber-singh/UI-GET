@@ -2,8 +2,10 @@ let index = 0;
 let emp = 1;
 let vehicleType;
 let selectedType;
+let selectedPlan = false;
 let passNo = 1;
 let passString;
+
 
 let conversionRates = {
     "rupee": 1, "dollar": 0.012, "yen": 1.73   
@@ -252,6 +254,7 @@ const selectPlan = (event) => {
     document.querySelectorAll(".select-plan button").forEach((btn) => {
         btn.textContent = "Select Plan";
         btn.classList.remove("selected");
+        selectedPlan = true;
     });
 
     event.target.classList.add("selected");
@@ -260,8 +263,11 @@ const selectPlan = (event) => {
 };
 
 generatePass = () => {
-    alert(`Pass for your ${selectedType} is : ${passString}${passNo}`);
-    
+    if(selectedPlan){
+        alert(`Pass for your ${selectedType} is : ${passString}${passNo}`);
+    }else{
+        alert("Please choose a plan");
+    }
 }
                 
 employeeElementDiv[index].lastElementChild.addEventListener("keypress", handleNameInput);
