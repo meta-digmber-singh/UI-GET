@@ -1,0 +1,216 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    width: 100%;
+    background-color: rgb(214, 214, 228);
+    overflow-x: hidden;
+}
+
+.heading{
+    height: 20px;
+    padding: 5px;
+}
+
+.navbar{
+    height: 50px;
+    display: flex;
+    justify-content:center;
+    background-color: rgb(59, 103, 199);
+}
+
+.navigation-item{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.cover-image img{
+    width: 100%;
+    height: 400px;
+    display: block;
+}
+
+.Add-Employee{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.Add-Vehicle{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    padding: 10px;
+}
+
+.section-heading{
+    padding: 10px;
+    align-items: center;
+    background-color: rgb(59, 103, 199);
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    color: aliceblue;
+    font-size:x-large;
+}
+
+#Message{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 400px;
+    height: 200px;
+}
+
+.section-picture{
+    width: 20%;
+}
+
+.section-picture img{
+    width: 100%;
+    border: 0px;
+}
+
+.pricing-blocks{
+    display: flex;
+    justify-content: center;
+    padding: 10px 100px;
+    align-items: center;
+}
+
+.Vehicle-price{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 5px;
+    width: 100%;
+    gap: 10px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.price-block{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    height: 150px;
+    background-color: rgb(59, 103, 199) ;
+    border-radius: 10px;
+    border: 1px solid rgb(24, 24, 25);
+    align-items: center;
+    color: aliceblue;
+}
+
+
+.permonth-price{
+    font-weight: bolder;
+}
+
+
+.input-field {
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    border-radius: .5rem;
+
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+    height: .7rem;
+}
+
+.input-field :focus{
+    border: 6px solid black;
+}
+
+.input-label{
+    display: block;
+    font-weight: bold;
+    color: rgb(16, 16, 16);
+    font-size: large;
+    padding-top : 10px;
+    margin-bottom: .5rem;
+}
+
+.radio-input-field{
+    flex: 1;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+#vehicle-type{
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+h1{
+    font-weight: bolder;
+    color: aliceblue;
+}
+
+
+.select-plan{
+    
+    border: 1px solid blue;
+}
+
+
+.show-element{
+    display: block;
+}
+
+.hide-element{
+    display: none;
+}
+
+#register-id{
+    width: 100%;
+    padding: 10px;
+    font-size: larger;
+    background-color: rgb(33, 202, 33);
+    color: rgb(234, 232, 229);
+}
+
+.selected {
+    background-color: green;
+    color: white;
+    border: 2px solid darkgreen;
+}
+
+.currency-changer{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.currency-button{
+    width: 100px;
+    font-size: 15px;
+}
+
+.get-pass{
+    display: flex;
+    justify-content: center;
+}
+
+#password-strength-indicator{
+    padding: 5px;
+}
