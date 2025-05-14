@@ -69,9 +69,6 @@ export default function TaskForm({ onDone }) {
   }
 
   function formatDate(isoString) {
-    if (!isoString) {
-      throw new Error("Invalid date string");
-    }
 
     const format = "YYYY-MM-DD HH:mm:ss";
     const date = new Date(isoString);
