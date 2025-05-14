@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import modal from './TaskModal';
 import Taskmodal from './TaskModal';
 
 function NavBar() {

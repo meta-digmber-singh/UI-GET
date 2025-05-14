@@ -1,7 +1,6 @@
 
-import Board from "./componenets/Board"
-import NavBar from "./componenets/NavBar"
-import Taskmodal from "./componenets/TaskModal"
+import Board from "./components/Board"
+import NavBar from "./components/NavBar"
 
 function App() {
 

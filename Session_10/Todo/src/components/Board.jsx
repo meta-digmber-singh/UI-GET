@@ -67,7 +67,7 @@ function TaskColumn({ title, titleColor, data, index }) {
                                 </button>
                             </div>
                         </div>
-                        <div className='px-2 '>{task.description}</div>
+                        <p className='px-2 line-clamp-1'>{task.description}</p>
                         </div>
                 })
             }</div>

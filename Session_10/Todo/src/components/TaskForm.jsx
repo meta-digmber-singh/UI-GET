@@ -35,7 +35,7 @@ const formSchema = z.object({
   title: z.string().min(1).min(1),
   priority: z.string(),
   status: z.string(),
-  description: z.string().optional()
+  description: z.string().max(200).optional()
 });
 
 export default function TaskForm({ onDone }) {
@@ -58,10 +58,8 @@ export default function TaskForm({ onDone }) {
       onDone();
       if(selectedTask === null) {
         dispatch(addTask({data: values}))
-      } else if(selectedTask.status !== 'completed'){
-        dispatch(editTask({id: selectedTask.id, data: values}))
-        dispatch(setSelectedTask(null))
       } else{
+        dispatch(editTask({id: selectedTask.id, data: values}))
         dispatch(setSelectedTask(null))
       }
     } catch (error) {
