@@ -1,5 +1,9 @@
+import { removeTask, setSelectedTask } from '@/redux/taskSlice';
 import React, { useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { CiEdit } from "react-icons/ci";
+import { RxCross2 } from "react-icons/rx";
+import { FaEye } from "react-icons/fa";
 
 function Board() {
     const dispatch = useDispatch();
@@ -12,8 +16,6 @@ function Board() {
             data.filter((task) => task.status === 'Completed')
         ]
     })
-
-    console.log(JSON.stringify(data))
 
     const columns = ['New', 'In Progress', 'Completed']
     const colors = ['bg-blue-100', 'bg-orange-100', 'bg-green-100']
@@ -40,6 +42,7 @@ function getTaskColor(priority){
 }
 
 function TaskColumn({ title, titleColor, data, index }) {
+    const dispatch = useDispatch();
     return (
         <div className='h-96 bg-gray-100 rounded-md'>
             {/* Header */}
@@ -49,10 +52,22 @@ function TaskColumn({ title, titleColor, data, index }) {
             <div >{
                 data.map((task) => {
                     return <div className={`${getTaskColor(task.priority)} border-1 py-2 my-2 rounded`} key={task.id}>
-                        <div className='text-black text-center font-bold ps-3'>
-                            <span>{task.title}</span>
+                        <div className='text-black font-bold justify-between flex'>
+                            <span className='px-2 text-center'>{task.title}</span>
+                            <div>
+                                {title === 'Completed' ? 
+                                <button className='cursor-pointer p-2 rounded-full hover:bg-black/10' onClick={() => dispatch(setSelectedTask(task))}>
+                                <FaEye />
+                                </button> :
+                                <button className='cursor-pointer p-2 rounded-full hover:bg-black/10' onClick={() => dispatch(setSelectedTask(task))}>
+                                    <CiEdit />
+                                </button>}
+                                <button className='cursor-pointer p-2 rounded-full hover:bg-black/10' onClick={() => dispatch(removeTask(task.id))}>
+                                    <RxCross2 />
+                                </button>
+                            </div>
                         </div>
-                        <div className='px-1'>{task.description}</div>
+                        <div className='px-2 '>{task.description}</div>
                         </div>
                 })
             }</div>

@@ -11,7 +11,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import TaskForm from './TaskForm';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSelectedTask } from '@/redux/taskSlice';
 
 
 function Taskmodal() {
@@ -23,14 +24,23 @@ function Taskmodal() {
     setOpen(selectedTask !== null);
   }, [selectedTask]);
 
+  const dispatch = useDispatch();
+  function handleOpen(isOpen) {
+    if (!isOpen) {
+      dispatch(setSelectedTask(null));
+    }
+
+    setOpen(isOpen);
+  }
+
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpen}>
       <DialogTrigger asChild>
         <Button>Add Task</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{(selectedTask === null ? 'Add' : 'Edit') + ' task'}</DialogTitle>
+          <DialogTitle>{(selectedTask === null ? 'Add' :(selectedTask.status !== 'Completed'?'Edit' : 'Completed')) + ' task'}</DialogTitle>
           <DialogDescription asChild>
             <div>
               <TaskForm onDone={() => setOpen(false)}/>

@@ -15,15 +15,15 @@ const taskSlice = createSlice({
             taskData['id'] = uuidv4();
             taskData['creationDate'] = new Date().toISOString();
             taskData['completionDate'] = null;
-    
+            
             state.tasks.push(taskData)
         },
         removeTask: (state, action) => {
-            state.filter((t) => t.id !== action.payload)
-        },
-        editTask: (state, action) => {
-            const task = state.find((t) => t.id === action.payload.id)
             
+            state.tasks = state.tasks.filter((t) => t.id !== action.payload)
+        },
+        editTask: (state, action) => {            
+            const task = state.tasks.find((t) => t.id === action.payload.id)
             task['title'] = action.payload.data.title
             task['status'] = action.payload.data.status
             task['priority'] = action.payload.data.priority
@@ -39,5 +39,5 @@ const taskSlice = createSlice({
     }
 })
 
-export const { addTask, removeTask, editTask } = taskSlice.actions;
+export const { addTask, removeTask, editTask, setSelectedTask } = taskSlice.actions;
 export default taskSlice.reducer;

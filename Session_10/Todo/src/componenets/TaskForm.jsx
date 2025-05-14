@@ -29,7 +29,7 @@ import {
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { useDispatch, useSelector } from "react-redux"
-import { addTask, editTask } from "@/redux/taskSlice"
+import { addTask, editTask, setSelectedTask } from "@/redux/taskSlice"
 
 const formSchema = z.object({
   title: z.string().min(1).min(1),
@@ -55,14 +55,14 @@ export default function TaskForm({ onDone }) {
 
   function onSubmit(values) {
     try {
-      console.log(values);
-      
       onDone();
-
-      if (selectedTask === null) {
+      if(selectedTask === null) {
         dispatch(addTask({data: values}))
-      } else {
-        dispatch(editTask({data: values}))
+      } else if(selectedTask.status !== 'completed'){
+        dispatch(editTask({id: selectedTask.id, data: values}))
+        dispatch(setSelectedTask(null))
+      } else{
+        dispatch(setSelectedTask(null))
       }
     } catch (error) {
       console.error("Form submission error", error);
@@ -81,10 +81,11 @@ export default function TaskForm({ onDone }) {
             <FormItem>
               <FormLabel>Title</FormLabel>
               <FormControl>
-                <Input 
+                <Input
                 placeholder="Enter title"
-                
                 type="text"
+                disabled= {selectedTask?.status === 'Completed'}
+                value = {field?.value ?? ""}
                 {...field} />
               </FormControl>
               
@@ -104,7 +105,7 @@ export default function TaskForm({ onDone }) {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Priority</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select disabled= {selectedTask?.status === 'Completed'} onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className='w-full'>
                     <SelectValue placeholder="" />
@@ -130,7 +131,7 @@ export default function TaskForm({ onDone }) {
           render={({ field }) => (
             <FormItem >
               <FormLabel>Status</FormLabel>
-              <Select className='' onValueChange={field.onChange} defaultValue={field.value}>
+              <Select disabled= {selectedTask?.status === 'Completed'} className='' onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className='w-full'>
                     <SelectValue placeholder="" />
@@ -158,7 +159,7 @@ export default function TaskForm({ onDone }) {
             <FormItem>
               <FormLabel>Description</FormLabel>
               <FormControl>
-                <Textarea
+                <Textarea disabled= {selectedTask?.status === 'Completed'}
                   placeholder="Enter a task description"
                   className="resize-none"
                   {...field}
@@ -169,7 +170,7 @@ export default function TaskForm({ onDone }) {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button disabled= {selectedTask?.status === 'Completed'} type="submit">Submit</Button>
       </form>
     </Form>
   )
