@@ -51,7 +51,7 @@ export default function TaskForm({ onDone }) {
         priority: selectedTask?.priority ?? 'Low',
         status: selectedTask?.status ?? 'New'
     }
-  })
+  })  
 
   function onSubmit(values) {
     try {
@@ -66,6 +66,26 @@ export default function TaskForm({ onDone }) {
       console.error("Form submission error", error);
       toast.error("Failed to submit the form. Please try again.");
     }
+  }
+
+  function formatDate(isoString) {
+    if (!isoString) {
+      throw new Error("Invalid date string");
+    }
+
+    const format = "YYYY-MM-DD HH:mm:ss";
+    const date = new Date(isoString);
+
+    const options = {
+      YYYY: date.getFullYear(),
+      MM: String(date.getMonth() + 1).padStart(2, "0"),
+      DD: String(date.getDate()).padStart(2, "0"),
+      HH: String(date.getHours()).padStart(2, "0"),
+      mm: String(date.getMinutes()).padStart(2, "0"),
+      ss: String(date.getSeconds()).padStart(2, "0"),
+    };
+
+    return format.replace(/YYYY|MM|DD|HH|mm|ss/g, (match) => options[match]);
   }
 
   return (
@@ -168,7 +188,39 @@ export default function TaskForm({ onDone }) {
             </FormItem>
           )}
         />
-        <Button disabled= {selectedTask?.status === 'Completed'} type="submit">Submit</Button>
+
+        <FormField
+          control={form.control}
+          name="creation"
+          className={cn(selectedTask === null && 'hidden')}
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Creation Date</FormLabel>
+              <FormControl>  
+                <span>{formatDate(selectedTask?.creationDate)}</span>
+              </FormControl>
+
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="completion"
+          className={cn(selectedTask?.status !== 'Completed' && 'hidden')}
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Completion Date</FormLabel>
+              <FormControl>  
+                <span>{formatDate(selectedTask?.completionDate)}</span>
+              </FormControl>
+
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button className = {cn(selectedTask?.status === 'Completed' && 'hidden')} type="submit">Submit</Button>
       </form>
     </Form>
   )

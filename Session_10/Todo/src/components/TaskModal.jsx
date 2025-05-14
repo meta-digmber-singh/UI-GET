@@ -38,7 +38,7 @@ function Taskmodal() {
       <DialogTrigger asChild>
         <Button>Add Task</Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className='h-11/12 overflow-auto'>
         <DialogHeader>
           <DialogTitle>{(selectedTask === null ? 'Add' :(selectedTask.status !== 'Completed'?'Edit' : 'Completed')) + ' task'}</DialogTitle>
           <DialogDescription asChild>
